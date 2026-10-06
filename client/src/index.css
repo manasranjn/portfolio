@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-base text-ink font-body antialiased;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(242, 166, 90, 0.06), transparent 40%),
+    radial-gradient(circle at 85% 60%, rgba(94, 234, 212, 0.05), transparent 45%);
+}
+
+::selection {
+  background: rgba(242, 166, 90, 0.35);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+::-webkit-scrollbar-thumb {
+  background: #232b3d;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #354056;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.eyebrow {
+  @apply font-mono text-xs tracking-widest text-teal uppercase;
+}
+
+.eyebrow::before {
+  content: '// ';
+  color: theme('colors.ink.faint');
+}
+
+.section-heading {
+  @apply font-display text-3xl sm:text-4xl font-semibold text-ink mt-3 mb-10;
+}
+
+.card-surface {
+  @apply bg-base-card border border-base-line rounded-xl;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 rounded-lg bg-amber px-6 py-3 font-display font-medium text-base transition-all duration-200 hover:bg-amber-dim hover:-translate-y-0.5 hover:shadow-glow active:translate-y-0;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center gap-2 rounded-lg border border-base-line px-6 py-3 font-display font-medium text-ink transition-all duration-200 hover:border-teal/50 hover:text-teal hover:-translate-y-0.5;
+}
+
+.tag-pill {
+  @apply font-mono text-xs px-2.5 py-1 rounded-md border border-base-line text-ink-muted bg-base-panel;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #5EEAD4;
+  outline-offset: 3px;
+}
